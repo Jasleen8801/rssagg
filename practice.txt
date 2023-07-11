@@ -1,0 +1,32 @@
+main.go: 
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"github.com/Jasleen8801/mystrings"
+// )
+
+// func main() {
+// 	fmt.Println(
+// 		mystrings.Reverse("hello"),
+// 	)
+// }
+
+// to build and run: go build ; ./golang
+// to globally install: go install 
+// to run: golang in parent directory
+
+
+go.mod: 
+
+module github.com/Jasleen8801/golang
+
+go 1.20
+
+// replace github.com/Jasleen8801/mystrings => ../mystrings
+// for local machine running 
+
+// require (
+//     github.com/Jasleen8801/mystrings v0.0.0
+// )
