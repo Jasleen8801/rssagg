@@ -1,0 +1,26 @@
+go get github.com/joho/godotenv
+go mod vendor
+go mod tidy
+go mod vendor
+
+go get github.com/go-chi/chi
+go mod vendor
+go mod tidy
+go mod vendor
+
+go get github.com/go-chi/cors
+go mod vendor
+go mod tidy
+go mod vendor
+
+go install github.com/kyleconroy/sqlc/cmd/sqlc@latest 
+(sqlc version) // to check
+
+go install github.com/pressly/goose/v3/cmd/goose@latest 
+(goose -version) // to check
+
+cd sql/schema
+goose postgres postgresql://postgres:Ja080104@localhost:5432/rssagg up
+
+cd ../..
+sqlc generate
