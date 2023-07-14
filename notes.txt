@@ -24,3 +24,17 @@ goose postgres postgresql://postgres:Ja080104@localhost:5432/rssagg up
 
 cd ../..
 sqlc generate
+
+go get github.com/lib/pq
+go mod tidy
+go mod vendor
+
+go get "github.com/google/uuid"
+go mod tidy
+go mod vendor
+
+cd sql/schema/
+goose postgres postgresql://postgres:Ja080104@localhost:5432/rssagg up 
+
+cd ../..
+sqlc generate
